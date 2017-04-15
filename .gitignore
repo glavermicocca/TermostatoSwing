@@ -1,3 +1,4 @@
 .gradle
 bin
 src/main/java/client_secret.json
+resources/client_secret.json

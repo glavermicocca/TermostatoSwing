@@ -18,6 +18,7 @@ import thermostat.bean.Values;
 import thermostat.gpio.Rele;
 import thermostat.thread.CurrentCalendar;
 import thermostat.thread.CurrentDateTime;
+import thermostat.thread.CurrentThemperatureUmidity;
 import thermostat.thread.ReleToggle;
 
 import javax.swing.border.EtchedBorder;
@@ -197,6 +198,8 @@ public class Start {
 		new CurrentCalendar(panelContainerSetTemperature, schedules, values, rele, sensor, temperature, btnOnoff, panelContainerSchedule).execute();
 		
 		new CurrentDateTime(time, date).execute();
+		
+		new CurrentThemperatureUmidity(values, rele, sensor, temperatureCurrent, umidityCurrent).execute();
 		
 		JButton btnL = new JButton("L");
 		btnL.addActionListener(new ActionListener() {
