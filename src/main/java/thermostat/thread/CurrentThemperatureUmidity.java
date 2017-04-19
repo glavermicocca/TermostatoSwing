@@ -39,7 +39,6 @@ public class CurrentThemperatureUmidity extends SwingWorker<Void, Void>
 		    this.labelUmidity.setText(""+this.sensor.getCurrentUmidity());
 			
 		    //System.out.println(Mapper.ABSOLUTE_PATH_USER_HOME + "Adafruit_Python_DHT/examples/AdafruitDHT.py 2302 12");
-		    
 			Process p = Runtime.getRuntime().exec(Mapper.ABSOLUTE_PATH_USER_HOME + "Adafruit_Python_DHT/examples/AdafruitDHT.py 2302 12");
 		    p.waitFor();
 	

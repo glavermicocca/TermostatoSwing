@@ -166,11 +166,6 @@ public class Start {
 					values.setToggleButton(false);
 					btnOnoff.setText("ON");
 					
-					rele.set(Rele.CALDAIA, Rele.OFF);
-				} else {
-					values.setToggleButton(true);
-					btnOnoff.setText("OFF");
-					
 					//accendo subito se la temperatura lo consente...
 					if(sensor.isHigher())
 					{
@@ -210,7 +205,6 @@ public class Start {
 		btnL.setFont(new Font("Roboto Black", Font.PLAIN, 44));
 		btnL.setBounds(162, 175, 76, 62);
 		frame.getContentPane().add(btnL);
-		
 		final JButton btnR = new JButton("R");
 		btnR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

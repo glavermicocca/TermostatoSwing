@@ -28,7 +28,6 @@ public class ReleToggle extends SwingWorker<Void, Void>
 	    while(true) { //per tutto il tempo
 	    	Thread.sleep(2000);
 	    	this.btnToggle.setVisible(true);
-	    	
 	    	this.rele.set(currentPin, Rele.OFF);
 	    }
 	}	
