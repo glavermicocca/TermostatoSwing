@@ -18,6 +18,7 @@ import thermostat.bean.Values;
 import thermostat.gpio.Rele;
 import thermostat.thread.CurrentCalendar;
 import thermostat.thread.CurrentDateTime;
+import thermostat.thread.CurrentThemperatureUmidity;
 import thermostat.thread.ReleToggle;
 
 import javax.swing.border.EtchedBorder;
@@ -165,19 +166,19 @@ public class Start {
 					values.setToggleButton(false);
 					btnOnoff.setText("ON");
 					
-					rele.set(Rele.CALDAIA, 0);
+					rele.set(Rele.CALDAIA, Rele.OFF);
 				} else {
-					btnOnoff.setText("OFF");
 					values.setToggleButton(true);
+					btnOnoff.setText("OFF");
 					
 					//accendo subito se la temperatura lo consente...
 					if(sensor.isHigher())
 					{
-						rele.set(Rele.CALDAIA, 1);
+						rele.set(Rele.CALDAIA, Rele.ON);
 					}
 					else
 					{
-						rele.set(Rele.CALDAIA, 0);
+						rele.set(Rele.CALDAIA, Rele.OFF);
 					}
 				}
 			}
@@ -198,7 +199,9 @@ public class Start {
 		
 		new CurrentDateTime(time, date).execute();
 		
-		JButton btnL = new JButton("L");
+		new CurrentThemperatureUmidity(values, rele, sensor, temperatureCurrent, umidityCurrent).execute();
+		
+		final JButton btnL = new JButton("L");
 		btnL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ReleToggle(btnL, rele, Rele.LEFT).execute();
@@ -208,7 +211,7 @@ public class Start {
 		btnL.setBounds(162, 175, 76, 62);
 		frame.getContentPane().add(btnL);
 		
-		JButton btnR = new JButton("R");
+		final JButton btnR = new JButton("R");
 		btnR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ReleToggle(btnR, rele, Rele.RIGHT).execute();

@@ -9,9 +9,9 @@ public class ReleToggle extends SwingWorker<Void, Void>
 {
 	JButton btnToggle;
 	Rele rele;
-	int currentPin;
+	String currentPin;
 		
-	public ReleToggle(JButton btnToggle, Rele rele, int currentPin) {
+	public ReleToggle(JButton btnToggle, Rele rele, String currentPin) {
 		super();
 		this.btnToggle = btnToggle;
 		this.rele = rele;
@@ -19,7 +19,7 @@ public class ReleToggle extends SwingWorker<Void, Void>
 		
 		this.btnToggle.setVisible(false);
 		
-		this.rele.set(currentPin, 1); //uno
+		this.rele.set(currentPin, Rele.ON); //uno
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class ReleToggle extends SwingWorker<Void, Void>
 	    	Thread.sleep(2000);
 	    	this.btnToggle.setVisible(true);
 	    	
-	    	this.rele.set(currentPin, 0);
+	    	this.rele.set(currentPin, Rele.OFF);
 	    }
 	}	
 }

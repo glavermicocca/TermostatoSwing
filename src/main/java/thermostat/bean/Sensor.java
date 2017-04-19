@@ -24,10 +24,11 @@ public class Sensor {
 	}
 
 	public void setCurrentTemperature(String currentTemperature) {
-		this.currentTemperature = Double.parseDouble(currentTemperature);
+		this.currentTemperature = Double.parseDouble(currentTemperature) - 2.0;
 	}
 
 	public boolean isHigher() {
+		//System.err.println("Current Temp : " + currentTemperature + "   Temp : " + values.getTemperature());
 		return (currentTemperature < values.getTemperature());
 	}
 }
