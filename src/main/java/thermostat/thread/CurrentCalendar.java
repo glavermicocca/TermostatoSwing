@@ -44,7 +44,7 @@ public class CurrentCalendar extends SwingWorker<Void, Void>
 	protected Void doInBackground() throws Exception {
 		// Simulate doing something useful.
 	    while(true) { //per tutto il tempo
-	    	Thread.sleep(60000);
+	    	Thread.sleep(10000);
 	    	
 	    	cQuickStart.check(panelContainerSetTemperature, listSchedule, values, rele, sensor, lblTemperature, btnOnoff, panelContainerSchedule);
 	    }

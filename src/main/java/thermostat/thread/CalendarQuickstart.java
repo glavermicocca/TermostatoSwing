@@ -113,7 +113,7 @@ public class CalendarQuickstart {
 	}
 
 	private static int counter = 0;
-	private static final int WAITING_TIME = 5;
+	private static final int WAITING_TIME = 1;
 
 	public static void check(JPanel panelContainerSetTemperature, JLabel listSchedule, Values values, Rele rele,
 			Sensor sensor, JLabel lblTemperature, JButton btnOnoff, JPanel panelContainerSchedule) throws IOException {

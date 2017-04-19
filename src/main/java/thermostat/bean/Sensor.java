@@ -28,6 +28,7 @@ public class Sensor {
 	}
 
 	public boolean isHigher() {
-		this.currentTemperature = Double.parseDouble(currentTemperature);
+		//System.err.println("Current Temp : " + currentTemperature + "   Temp : " + values.getTemperature());
+		return (currentTemperature < values.getTemperature());
 	}
 }
