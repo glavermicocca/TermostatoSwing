@@ -15,7 +15,6 @@ import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 
 import com.google.api.client.auth.oauth2.Credential;
@@ -44,7 +43,7 @@ public class CalendarQuickstart {
 	/** Application name. */
 	private static final String APPLICATION_NAME = "Google Calendar API Java Quickstart";
 
-	private static final String CALENDAR_NAME = "Crono Termo Piccardi";
+	private static final String CALENDAR_NAME = "Crono Termo MakerFair";
 
 	/** Directory to store user credentials for this application. */
 	private static final java.io.File DATA_STORE_DIR = new java.io.File(Mapper.ABSOLUTE_PATH_USER_HOME,
