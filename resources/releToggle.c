@@ -27,6 +27,10 @@ int main (int argc, char *argv[])
  
   digitalWrite (PIN, LIVELLO) ;       // On
 
+  usleep(2000 * 1000);
+
+  digitalWrite (PIN, 0) ;       // On
+
   printf ("Welcome\n Set PIN %d to %d\n", PIN, LIVELLO) ;
 
   return 0 ;
