@@ -7,16 +7,16 @@ import java.util.Date;
 
 import mapper.Mapper;
 
-public class Rele {
+public class ReleToggle {
 	
-	public static final String CALDAIA = "23";
+	public static final String LEFT = "24";
+	public static final String RIGHT = "25";
 	
 	public static final String ON = "1";
 	public static final String OFF = "0";
 	
-	public Rele() {
+	public ReleToggle() {
 		super();
-		this.set(CALDAIA, OFF);
 	}
 
 	public void set(String pin, String state)
@@ -29,7 +29,7 @@ public class Rele {
 		try
 		{
 			//System.err.println(Mapper.ABSOLUTE_PATH_APPLICATION + "resources/rele " + pin + " " + state);
-			Process p = Runtime.getRuntime().exec("" + Mapper.ABSOLUTE_PATH_APPLICATION + "resources/rele " + pin + " " + state);
+			Process p = Runtime.getRuntime().exec("" + Mapper.ABSOLUTE_PATH_APPLICATION + "resources/releToggle " + pin + " " + state);
 		    p.waitFor();
 		
 		    BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));

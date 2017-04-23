@@ -182,7 +182,7 @@ public class CalendarQuickstart {
 				.setOrderBy("startTime").setSingleEvents(true).execute();
 		List<Event> itemsSingle = eventsSingle.getItems();
 		if (itemsSingle.size() == 0) {
-			System.err.println("EVENTI NON TROVATI!");
+			//System.err.println("EVENTI NON TROVATI!");
 
 			panelContainerSchedule.setBounds(162, 47, 154, 125);
 			listSchedule.setBounds(2, 2, 149, 119);
@@ -212,7 +212,7 @@ public class CalendarQuickstart {
 
 			// CERCA LA TEMPERATURA NELL'EVENTO
 			if (matcher.find()) {
-				System.err.println(matcher.group(0));
+				//System.err.println(matcher.group(0));
 				Double currentValue = Double.parseDouble(matcher.group(0));
 				values.setTemperature(currentValue);
 				lblTemperature.setText("" + currentValue);

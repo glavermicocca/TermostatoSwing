@@ -16,7 +16,7 @@ public class ImageComponent extends JComponent {
     public ImageComponent(String path) {
     	try {
     		File f = new File(Mapper.ABSOLUTE_PATH_APPLICATION + path);
-    		System.out.println(f.getAbsolutePath());
+    		//System.out.println(f.getAbsolutePath());
     		img = ImageIO.read(f);
     	} catch (IOException e) {
     		e.printStackTrace();

@@ -16,10 +16,11 @@ import javax.swing.JPanel;
 import thermostat.bean.Sensor;
 import thermostat.bean.Values;
 import thermostat.gpio.Rele;
+import thermostat.gpio.ReleToggle;
 import thermostat.thread.CurrentCalendar;
 import thermostat.thread.CurrentDateTime;
 import thermostat.thread.CurrentThemperatureUmidity;
-import thermostat.thread.ReleToggle;
+import thermostat.thread.ReleThread;
 
 import javax.swing.border.EtchedBorder;
 import javax.swing.text.html.ListView;
@@ -199,7 +200,7 @@ public class Start {
 		final JButton btnL = new JButton("L");
 		btnL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ReleToggle(btnL, rele, Rele.LEFT).execute();
+				new ReleThread(btnL, new ReleToggle(), ReleToggle.LEFT).execute();
 			}
 		});
 		btnL.setFont(new Font("Roboto Black", Font.PLAIN, 44));
@@ -208,7 +209,7 @@ public class Start {
 		final JButton btnR = new JButton("R");
 		btnR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ReleToggle(btnR, rele, Rele.RIGHT).execute();
+				new ReleThread(btnR, new ReleToggle(), ReleToggle.RIGHT).execute();
 			}
 		});
 		btnR.setFont(new Font("Roboto Black", Font.PLAIN, 44));
