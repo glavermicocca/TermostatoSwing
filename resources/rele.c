@@ -4,8 +4,9 @@
  *      Gordon Henderson, projects@drogon.net
  */
  
-#include <stdio.h>
 #include <wiringPi.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int main (int argc, char *argv[])
 {
