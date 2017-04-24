@@ -27,7 +27,7 @@ int main (int argc, char *argv[])
  
   digitalWrite (PIN, LIVELLO) ;       // On
 
-  usleep(2000 * 1000);
+  usleep(2700 * 1000);
 
   digitalWrite (PIN, 0) ;       // On
 
